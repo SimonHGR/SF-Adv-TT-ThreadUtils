@@ -4,8 +4,8 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class UseAMap {
-  private static final int CHUNK_SIZE = 32_768/*_000*/;
-  private static final int THREAD_COUNT = 1_000;
+  private static final int CHUNK_SIZE = 32_768_000;
+  private static final int THREAD_COUNT = 1/*_000*/;
 
   static class Loader implements Runnable {
     private int start;
@@ -54,8 +54,8 @@ public class UseAMap {
 
   public static void main(String[] args) throws Throwable {
 
-    Map<Integer, String> mis = new HashMap<>();
-//    Map<Integer, String> mis = Collections.synchronizedMap(new HashMap<>());
+//    Map<Integer, String> mis = new HashMap<>();
+    Map<Integer, String> mis = Collections.synchronizedMap(new HashMap<>());
 //    Map<Integer, String> mis = new ConcurrentHashMap<>();
 
     long start = System.nanoTime();
